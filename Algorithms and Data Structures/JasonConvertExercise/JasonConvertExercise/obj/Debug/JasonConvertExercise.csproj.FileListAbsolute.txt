@@ -1,0 +1,10 @@
+D:\Projects\JasonConvertExercise\JasonConvertExercise\bin\Debug\JasonConvertExercise.exe
+D:\Projects\JasonConvertExercise\JasonConvertExercise\bin\Debug\JasonConvertExercise.pdb
+D:\Projects\JasonConvertExercise\JasonConvertExercise\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\JasonConvertExercise\JasonConvertExercise\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.csproj.AssemblyReference.cache
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.csproj.SuggestedBindingRedirects.cache
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.csproj.CoreCompileInputs.cache
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.csproj.CopyComplete
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.exe
+D:\Projects\JasonConvertExercise\JasonConvertExercise\obj\Debug\JasonConvertExercise.pdb
