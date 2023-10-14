@@ -12,13 +12,14 @@ namespace TreasureHunt
         private int _treasureY;
         private int _trapX;
         private int _trapY;
+        private int _minValue = 0;
+        private int _maxValue = 9;
 
+        public int Width => _width;
+        public int Height => _height;
         public int TreasureX => _treasureX;
-
         public int TreasureY => _treasureY;
-
         public int TrapX => _trapX;
-
         public int TrapY => _trapY;
 
         public Grid(int width, int height)
@@ -27,8 +28,8 @@ namespace TreasureHunt
             _height = height;
             _tiles = new int[_width, _height];
             
-            PrintGrid(0, 0);
             Initialize();
+            PrintGrid(GetMidValueIndex()[0], GetMidValueIndex()[1]);
             PlaceTreasure();
             PlaceTrap();
         }
@@ -60,28 +61,28 @@ namespace TreasureHunt
             {
                 for (int j = 0; j < _height; j++)
                 {
-                    _tiles[i, j] = random.Next(0, 10);
+                    _tiles[i, j] = random.Next(_minValue, _maxValue + 1);
                 }
             }
         }
         
         private void PlaceTreasure()
         {
-            var maxValueIndex = MaxValueIndex();
+            var maxValueIndex = GetMaxValueIndex();
             _treasureX = maxValueIndex[0];
             _treasureY = maxValueIndex[1];
         }
         
         private void PlaceTrap()
         {
-            var minValueIndex = MinValueIndex();
+            var minValueIndex = GetMinValueIndex();
             _trapX = minValueIndex[0];
             _trapY = minValueIndex[1];
         }
 
-        private int[] MaxValueIndex()
+        private int[] GetMaxValueIndex()
         {
-            int maxValue = 0;
+            int maxValue = _minValue;
             int[] maxValueIndex = new int[2];
 
             for (int i = 0; i < _width; i++)
@@ -100,9 +101,9 @@ namespace TreasureHunt
             return maxValueIndex;
         }
         
-        private int[] MinValueIndex()
+        private int[] GetMinValueIndex()
         {
-            int minValue = 9;
+            int minValue = _maxValue;
             int[] minValueIndex = new int[2];
 
             for (int i = 0; i < _width; i++)
@@ -119,6 +120,37 @@ namespace TreasureHunt
             }
 
             return minValueIndex;
+        }
+
+        public int[] GetMidValueIndex()
+        {
+            List<int> values = new List<int>();
+            int[] midValueIndex = new int[2];
+
+            for (int i = 0; i < _width; i++)
+            {
+                for (int j = 0; j < _height; j++)
+                {
+                    values.Add(_tiles[i, j]);
+                }
+            }
+
+            values.Sort();
+            int midValue = values[values.Count / 2];
+            
+            for (int i = 0; i < _width; i++)
+            {
+                for (int j = 0; j < _height; j++)
+                {
+                    if (_tiles[i, j] == midValue)
+                    {
+                        midValueIndex[0] = i;
+                        midValueIndex[1] = j;
+                    }
+                }
+            }
+
+            return midValueIndex;
         }
 
         public void ShowMap()

@@ -7,7 +7,7 @@ namespace TreasureHunt
     {
         private int _x;
         private int _y;
-        private int _moves;
+        private int _movesLeft;
 
         public int X
         {
@@ -21,17 +21,17 @@ namespace TreasureHunt
             set => _y = value;
         }
 
-        public int Moves
+        public int MovesLeft
         {
-            get => _moves;
-            set => _moves = value;
+            get => _movesLeft;
+            set => _movesLeft = value;
         }
 
-        public Player(int x, int y, int moves)
+        public Player(int x, int y, int movesLeft)
         {
             _x = x;
             _y = y;
-            _moves = moves;
+            _movesLeft = movesLeft;
         }
     }
 }
