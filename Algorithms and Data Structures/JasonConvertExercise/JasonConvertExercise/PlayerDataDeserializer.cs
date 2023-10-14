@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace JasonParserExercise
+namespace JsonParser
 {
     public class PlayerDataDeserializer
     {
