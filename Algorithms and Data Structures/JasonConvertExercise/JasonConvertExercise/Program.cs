@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JasonParserExercise
+namespace JsonParser
 {
     internal class Program
     {
@@ -22,14 +22,18 @@ namespace JasonParserExercise
                 {
                     Console.WriteLine("username is a necessary field and cannot be null!");
                     Parse();
-                }
-                else if (convertedPlayerData.level == 0)
-                {
-                    convertedPlayerData.level = 1;
+                    return;
                 }
                 
                 Console.WriteLine(convertedPlayerData.username);
+                Console.WriteLine(convertedPlayerData.guild);
                 Console.WriteLine(convertedPlayerData.level);
+                Console.WriteLine(convertedPlayerData.skinID);
+
+                foreach (var item in convertedPlayerData.items)
+                {
+                    Console.Write($"{item}  ");
+                }
             }
             catch
             {
